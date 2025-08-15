@@ -27,7 +27,7 @@ function playRound(userChoice, computerChoice) {
 }
 
 function getUserInput() {
-    let input = prompt("Enter Rock, Paper, or Scissors:");
+    // let input = prompt("Enter Rock, Paper, or Scissors:");
     if (input) {
         return input.toLowerCase();
     }
