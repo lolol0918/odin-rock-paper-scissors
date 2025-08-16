@@ -2,6 +2,11 @@
 
 // Define variables
 const choices = ["rock", "paper", "scissors"];
+const choiceEmojis = {
+  rock: "✊",
+  paper: "✋",
+  scissors: "✌️"
+};
 let userScore = 0;
 let computerScore = 0;
 
@@ -17,11 +22,12 @@ function playRound(userChoice, computerChoice) {
         (userChoice === "scissors" && computerChoice === "paper")
     ) {
         // You win!
-        userScore++;
-        return "You win!";
+        ++userScore;
+        userScoreEl.innerText = userScore;
+        
     } else {
-        computerScore++;
-        return "Computer wins!";
+        ++computerScore;
+        computerScoreEl.innerText = computerScore;
     }
 
 }
@@ -38,18 +44,25 @@ const getComputerInput = () => {
     // Get Computer Input
     let randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
-}
+};
 
 // Event listener for three buttons
 const buttons = document.querySelectorAll(".btn");
+const userScoreEl = document.getElementById("userScore");
+const computerScoreEl = document.getElementById("computerScore");
+const userChoiceEl = document.getElementById("playerChoice");
+const computerChoiceEl = document.getElementById("computerChoice");
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const userChoice = button.dataset.choice; 
         const computerChoice = getComputerInput();
-        console.log(`${userChoice}  ${computerChoice}`)
-    })
-})
+        userChoiceEl.innerText = `${choiceEmojis[userChoice]}`;
+        computerChoiceEl.innerText = `${choiceEmojis[computerChoice]}`;
+        playRound(userChoice, computerChoice);
+        console.log("Player:", userScore, "Computer:", computerScore);
+    });
+});
 
 // check who is the winner
 
