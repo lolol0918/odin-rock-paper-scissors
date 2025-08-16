@@ -58,6 +58,11 @@ const userScoreEl = document.getElementById("userScore");
 const computerScoreEl = document.getElementById("computerScore");
 const userChoiceEl = document.getElementById("playerChoice");
 const computerChoiceEl = document.getElementById("computerChoice");
+const resetBtn = document.getElementById("reset");
+
+resetBtn.addEventListener('click', () => {
+    location.reload();    
+});
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
