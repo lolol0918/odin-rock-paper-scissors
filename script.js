@@ -34,11 +34,10 @@ function getUserInput() {
     return null; // user canceled
 }
 
-function getComputerInput(){
+const getComputerInput = () => {
     // Get Computer Input
     let randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
-
 }
 
 // Event listener for three buttons
@@ -46,7 +45,9 @@ const buttons = document.querySelectorAll(".btn");
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        const choice = button.dataset.choice; 
+        const userChoice = button.dataset.choice; 
+        const computerChoice = getComputerInput();
+        console.log(`${userChoice}  ${computerChoice}`)
     })
 })
 
