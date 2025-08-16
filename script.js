@@ -2,6 +2,7 @@
 
 // Define variables
 const choices = ["rock", "paper", "scissors"];
+const WINNING_SCORE = 5;
 const choiceEmojis = {
     rock: "✊",
     paper: "✋",
@@ -43,7 +44,28 @@ function playRound(userChoice, computerChoice) {
         computerChoiceEl.classList.add("win");
 
     }
+    checkWinner(userScore, computerScore);
 }
+
+const checkWinner = (userScore, computerScore) => {
+    if (userScore >= WINNING_SCORE) {
+        setTimeout(() => {
+            alert("You won the game! 🎉");
+            // disables all buttons
+            buttons.forEach(button => {
+                button.disabled = true;
+            }, 50); //adds delay for the DOM to render
+        })
+    } else if (computerScore >= WINNING_SCORE) {
+        setTimeout(() => {
+            alert("You won the game! 🎉");
+            // disables all buttons
+            buttons.forEach(button => {
+                button.disabled = true;
+            });
+        }, 50);
+    }
+};
 
 
 const getComputerInput = () => {
@@ -61,7 +83,7 @@ const computerChoiceEl = document.getElementById("computerChoice");
 const resetBtn = document.getElementById("reset");
 
 resetBtn.addEventListener('click', () => {
-    location.reload();    
+    location.reload();
 });
 
 buttons.forEach(button => {
