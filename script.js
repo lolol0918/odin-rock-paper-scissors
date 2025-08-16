@@ -41,27 +41,14 @@ function getComputerInput(){
 
 }
 
-// Loop for five rounds
-for (let i = 0; i < 5; i++) {
-    // Get User Input
-    let userChoice = getUserInput();
-
-    if (!choices.includes(userChoice)) {
-        console.log("Please enter rock, paper, or scissors.");
-        i--;
-        continue;
-    }
-
-    // Get Computer Input
-    let computerChoice = getComputerInput();
-
-    console.log(playRound(userChoice, computerChoice));
-
-}
-
-
-
 // Event listener for three buttons
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const choice = button.dataset.choice; 
+    })
+})
 
 // check who is the winner
 
