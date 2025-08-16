@@ -1,5 +1,6 @@
 * {
     font-family: 'Arial', sans-serif;
+    font-weight: bold;
 }
 
 body {
@@ -22,7 +23,8 @@ body {
 
 .selections {
     display: flex;
-    justify-content: space-around;
+    gap: 50px;
+    justify-content: center;
     margin-top: 20px;
     padding: 30px;
     border-radius: 10px;
@@ -38,6 +40,22 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.score {
+    width: 150px;
+}
+
+.score div {
+    text-align: center;
+    padding: 3px;
 }
 
 .btn-container {

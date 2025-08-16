@@ -59,19 +59,6 @@ for (let i = 0; i < 5; i++) {
 
 }
 
-// Compare both scores
-// THEN print winner
-
-console.log(`Final Score -- You: ${userScore} - Computer: ${computerScore}`);
-
-if (userScore == computerScore) {
-    console.log("It's a tie");
-} else if (userScore > computerScore) {
-    console.log("You win!");
-} else {
-    console.log("Computer wins!");
-}
-
 
 
 // Event listener for three buttons
