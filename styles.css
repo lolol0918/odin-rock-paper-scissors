@@ -1,62 +1,85 @@
 * {
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
 }
 
 body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .game-container {
-    width: 100%;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
 .selections {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 30px;
-    border-radius: 10px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 30px;
+  border-radius: 10px;
 }
 
-.selections div {
-  width: 150px;   
-  height: 150px; 
-  border: 2px solid #333;
+.choice-box {
+  width: 150px;
+  height: 150px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.9);
-  display: flex;            
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   font-size: 2.5rem;
 }
 
+/* highlights who won */
+.win {
+  background-color: #4caf50;
+  box-shadow: 0 0 15px #4caf50;
+  color: white;
+}
+
+.lose {
+  background-color: #f44336;
+  box-shadow: 0 0 15px #f44336;
+  color: white;
+}
+
+.draw {
+  background-color: #ffffff;
+  /* white */
+  box-shadow: 0 0 10px #ccc;
+  /* subtle gray shadow */
+  color: #333;
+  /* dark text for contrast */
+}
+
 .scoreboard {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
 }
 
 .score {
-    width: 150px;
+  width: 150px;
+  font-size: 1.2rem;
 }
 
 .score div {
-    text-align: center;
-    padding: 3px;
+  text-align: center;
+  padding: 3px;
 }
 
 .btn-container {
@@ -72,14 +95,17 @@ body {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  font-size: 2.5rem;          /* big emoji */
+  font-size: 2.5rem;
+  /* big emoji */
   font-weight: bold;
   color: white;
   display: flex;
-  flex-direction: column;     /* stack emoji + label */
+  flex-direction: column;
+  /* stack emoji + label */
   justify-content: center;
   align-items: center;
-  gap: 5px;                   /* spacing between emoji + label */
+  gap: 5px;
+  /* spacing between emoji + label */
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -120,5 +146,5 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  padding: 10px 20px;  
+  padding: 10px 20px;
 }

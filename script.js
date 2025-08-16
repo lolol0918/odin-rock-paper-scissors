@@ -3,9 +3,9 @@
 // Define variables
 const choices = ["rock", "paper", "scissors"];
 const choiceEmojis = {
-  rock: "✊",
-  paper: "✋",
-  scissors: "✌️"
+    rock: "✊",
+    paper: "✋",
+    scissors: "✌️"
 };
 let userScore = 0;
 let computerScore = 0;
@@ -13,9 +13,16 @@ let computerScore = 0;
 function playRound(userChoice, computerChoice) {
     // Compare Results
     // IF userChoice == computerChoice
+
+    // Reset previous glow
+    userChoiceEl.classList.remove("win", "lose", "draw");
+    computerChoiceEl.classList.remove("win", "lose", "draw");
+
+
     if (userChoice === computerChoice) {
-        //     PRINT "It's a tie!"
-        return "Its a tie";
+        // draws them bih
+        userChoiceEl.classList.add("draw");
+        computerChoiceEl.classList.add("draw");
     } else if (
         (userChoice === "rock" && computerChoice === "scissors") ||
         (userChoice === "paper" && computerChoice === "rock") ||
@@ -24,21 +31,20 @@ function playRound(userChoice, computerChoice) {
         // You win!
         ++userScore;
         userScoreEl.innerText = userScore;
-        
+        // makes it glow
+        userChoiceEl.classList.add("win");
+        computerChoiceEl.classList.add("lose");
+
     } else {
         ++computerScore;
         computerScoreEl.innerText = computerScore;
-    }
+        // makes it glow
+        userChoiceEl.classList.add("lose");
+        computerChoiceEl.classList.add("win");
 
+    }
 }
 
-function getUserInput() {
-    // let input = prompt("Enter Rock, Paper, or Scissors:");
-    if (input) {
-        return input.toLowerCase();
-    }
-    return null; // user canceled
-}
 
 const getComputerInput = () => {
     // Get Computer Input
@@ -55,12 +61,14 @@ const computerChoiceEl = document.getElementById("computerChoice");
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        const userChoice = button.dataset.choice; 
+        const userChoice = button.dataset.choice;
         const computerChoice = getComputerInput();
+
+        // updates the board and shows what the players chose
         userChoiceEl.innerText = `${choiceEmojis[userChoice]}`;
         computerChoiceEl.innerText = `${choiceEmojis[computerChoice]}`;
+
         playRound(userChoice, computerChoice);
-        console.log("Player:", userScore, "Computer:", computerScore);
     });
 });
 
