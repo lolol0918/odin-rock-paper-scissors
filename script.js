@@ -71,3 +71,14 @@ if (userScore == computerScore) {
 } else {
     console.log("Computer wins!");
 }
+
+
+
+// Event listener for three buttons
+
+// check who is the winner
+
+// Add to the score
+
+// IF user or computer reaches 5 declare them the winner
+
