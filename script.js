@@ -58,7 +58,7 @@ const checkWinner = (userScore, computerScore) => {
         })
     } else if (computerScore >= WINNING_SCORE) {
         setTimeout(() => {
-            alert("You won the game! 🎉");
+            alert("Computer won the game! 🎉");
             // disables all buttons
             buttons.forEach(button => {
                 button.disabled = true;
